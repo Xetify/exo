@@ -7,11 +7,10 @@ const app = express()
 const PORT = process.env.PORT || 2222
 app.use(express.json())
 
+app.get("/", (req, res) => {
+    res.send("Hello World")
+})
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`)
-})
-
-app.get("/home", (req, res) => {
-    res.render("<h1>Welcome to the page</h1> <script>console.log('hello world')</script>")
 })
